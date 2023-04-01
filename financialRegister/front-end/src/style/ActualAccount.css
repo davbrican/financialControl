@@ -1,0 +1,47 @@
+.actualAccount {
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 340px;
+    height: 190px;
+}
+.amountContainer {
+    float: left;
+    width: 150px;
+    height: 190px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.inicial {
+    float: right;
+    margin-right: 10px;
+}
+.final {
+    float: left;
+    margin-left: 10px;
+}
+
+.head {
+    margin-top: 10px;
+}
+.text {
+    margin-top: -10px;
+}
+
+.bar {
+    margin-top: 10px;
+    width: 50px;
+    height: 100px;
+}
+
+.inicial-bar {
+    background-color: rgb(0, 108, 116);
+    float: right;
+    margin-right: 10px;
+}
+.final-bar {
+    background-color: rgb(21, 174, 185);
+    float: left;
+    margin-left: 10px;
+}

@@ -1,0 +1,11 @@
+.description {
+    margin-left: 5px;
+    background-color: rgba(165, 42, 42, 0.445);
+}
+
+.amount {
+    border-left: 1px dashed rgb(241, 200, 145);
+    border-right: 1px dashed rgb(241, 200, 145);
+    border-collapse: collapse;
+    background-color: rgba(250, 235, 215, 0.2);
+}
