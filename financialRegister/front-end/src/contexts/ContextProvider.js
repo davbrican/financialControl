@@ -5,9 +5,10 @@ const StateContext = createContext();
 export const ContextProvider = ({ children }) => {
 
     const [totalAmount, setTotalAmount] = useState('');
+    const [totalBills, setTotalBills] = useState('');
     
     return (
-        <StateContext.Provider value={{ totalAmount, setTotalAmount }}>
+        <StateContext.Provider value={{ totalAmount, setTotalAmount, totalBills, setTotalBills }}>
         {children}
         </StateContext.Provider>
     );

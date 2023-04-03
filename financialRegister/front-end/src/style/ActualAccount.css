@@ -1,7 +1,7 @@
 .actualAccount {
-    border: 2px solid rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(156, 161, 85, 0.15);
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(244, 248, 183, 0.1);
     width: 340px;
     height: 190px;
 }

@@ -1,15 +1,22 @@
-import React from 'react'
-//import axios from 'axios';
+import React, { useEffect } from "react";
+import axios from 'axios';
 import { useStateContext } from '../contexts/ContextProvider';
 import "../style/ActualAccount.css";
 
 const ActualAccount = () => {
 
-    const { totalAmount, setTotalAmount } = useStateContext();
+    const { totalAmount, setTotalAmount, totalBills } = useStateContext();
 
-    setTotalAmount(4300.12);
+    useEffect(() => {
+        const fetchTotalAmount = async () => {
+            const res = await axios.get("http://localhost:5000/monthRegister/04/2023");
+            setTotalAmount(res.data[0].initialAmount);
+        };
+        fetchTotalAmount();
+    }, []);
 
-    let actualAccount = 3500.87;
+
+    let actualAccount = totalAmount - totalBills;
 
     let difference = 100*(actualAccount/totalAmount);
 

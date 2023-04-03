@@ -51,9 +51,22 @@ def getBills():
     cur.execute('SELECT * FROM bills')
     data = cur.fetchall()
     res = []
+    categories = getCategories()
     for i in data:
+        amounts = []
+        for j in categories:
+            if i[4] == j['category']:
+                if len(str(i[3]).split(".")[1]) == 0:
+                    amounts.append(str(i[3])+".00 €")
+                elif len(str(i[3]).split(".")[1]) == 1:
+                    amounts.append(str(i[3])+"0 €")
+                else:
+                    amounts.append(str(i[3])+" €")
+            else:
+                amounts.append("")
+        
         fecha = str(i[1]).split("-")[2]+"/"+str(i[1]).split("-")[1]+"/"+str(i[1]).split("-")[0]
-        res.append({"id": i[0], "date": fecha, "description": i[2], "amount": i[3], "category": i[4]})
+        res.append({"id": i[0], "date": fecha, "description": i[2], "amount": i[3], "category": i[4], "amounts": amounts})
     return res
 
 @app.route('/billsByCategory/<string:category>', methods=['GET'])
@@ -96,6 +109,18 @@ def getCategories():
     for i in data:
         res.append({"category": i[1]})
     return res
+
+@app.route('/monthRegister/<string:month>/<string:year>', methods=['GET'])
+def getMonthRegister(month, year):
+    cur = mysql.connection.cursor()
+    cur.execute(f"SELECT * FROM monthregister WHERE month LIKE '"+month+year+"'")
+    data = cur.fetchall()
+    res = []
+    for i in data:
+        fecha = i[1][0:2]+"/"+i[1][3:5]
+        res.append({"id": i[0], "date": fecha, "initialAmount": i[2]})
+    return res
+
 
 if __name__ == '__main__':
     app.run(debug=True)
