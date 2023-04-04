@@ -39,8 +39,8 @@ const Bills = () => {
   }, []);
 
   return (
-    <div className="bills">
-      <h1 style={{paddingLeft: 20}}>Gastos por tipos</h1>
+      <div className="bills">
+        <h1 style={{paddingLeft: 20, color: "orange"}}>Gastos por tipos</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (

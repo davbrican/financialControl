@@ -23,13 +23,14 @@ const ActualAccount = () => {
     return (
         <div>
             <div className='actualAccount'>
+                <h1 style={{paddingLeft: 20, color: "orange"}}>Saldos</h1>
                 <div className='amountContainer'>
                     <div className='inicial-bar bar'></div>
                     <h3 className='inicial head'>Saldo Inicial</h3>
                     <p className='inicial text'>{totalAmount}€</p>
                 </div>
                 <div className='amountContainer'>
-                    <div className='final-bar bar' style={{height: difference, marginTop: 110-difference}}></div>
+                    <div className='final-bar bar' style={{height: difference, marginTop: 111-difference}}></div>
                     <h3 className='final head'>Saldo Final</h3>
                     <p className='final text'>{actualAccount}€</p>
                 </div>
