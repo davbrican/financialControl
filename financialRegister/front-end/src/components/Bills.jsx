@@ -4,11 +4,8 @@ import "../style/Bills.css";
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Bills = () => {
-  const [bills, setBills] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [categories, setCategories] = useState([]);
-  const [billsByCategory, setBillsByCategory] = useState({});
-  const { setTotalBills } = useStateContext();
+  const { setTotalBills, bills, setBills, categories, setCategories, billsByCategory, setBillsByCategory } = useStateContext();
 
   useEffect(() => {
     const fetchCategories = async () => {

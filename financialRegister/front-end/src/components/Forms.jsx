@@ -4,6 +4,10 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 const Forms = () => {
 
+    /*
+    const [loading, setLoading] = useState(true);
+    const [setCategories] = useStateContext();
+
     useEffect(() => {
         const fetchCategories = async () => {
             const res = await axios.get("http://localhost:5000/categories");
@@ -12,7 +16,7 @@ const Forms = () => {
         };
         fetchCategories();
     }, []);
-
+    */
 
     return (
         <div>
