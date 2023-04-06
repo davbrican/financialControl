@@ -1,0 +1,48 @@
+.graficas {
+    border: 2px solid rgba(156, 161, 85, 0.15);
+    border-radius: 20px;
+    background-color: #FEFFF8;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 300px;
+    padding: 20px;
+    width: 1180px;
+    padding-top: 0;
+}
+
+
+#my-pie-chart-container {
+    display: flex;
+    align-items: center;
+}
+
+#my-pie-chart {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+#legenda {
+    margin-left: 20px;
+    background-color: rgb(0, 0, 0, 0.05);
+    padding: 5px;
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+}
+
+.entry-color {
+    height: 10px;
+    width: 10px;
+}
+
+.entry-text {
+    margin-left: 5px;
+}
+
+.category-legend-text {
+    display: inline-block;
+    margin: 5px;
+}

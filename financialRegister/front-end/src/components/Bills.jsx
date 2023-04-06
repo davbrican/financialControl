@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../style/Bills.css";
 import { useStateContext } from '../contexts/ContextProvider';
+import parseNumber from "../utils/parseNumber";
+import "../style/Home.css";
 
-const Bills = () => {
+const Bills = (props) => {
   const [loading, setLoading] = useState(true);
   const { setTotalBills, bills, setBills, categories, setCategories, billsByCategory, setBillsByCategory } = useStateContext();
+
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -33,10 +36,11 @@ const Bills = () => {
       setLoading(false);
     };
     fetchCategories();
+    // eslint-disable-next-line
   }, []);
 
   return (
-      <div className="bills">
+      <div className={props.clase}>
         <h1 style={{paddingLeft: 20, color: "orange"}}>Gastos por tipos</h1>
       {loading ? (
         <p>Loading...</p>
@@ -53,7 +57,7 @@ const Bills = () => {
               <td></td>
               <td></td>
               {categories.map((category) => (
-                  <td align="right">{billsByCategory[category.category] || 0} €</td>
+                  <td align="right">{parseNumber(billsByCategory[category.category])} €</td>
               ))}
           </tr>
           {bills.map((bill) => (
@@ -70,5 +74,6 @@ const Bills = () => {
     </div>
   );
 };
+
 
 export default Bills;

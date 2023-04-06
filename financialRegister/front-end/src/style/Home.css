@@ -1,0 +1,23 @@
+.home-actualAccount {
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.home-bills {
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.home-form {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.home-grafica {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}

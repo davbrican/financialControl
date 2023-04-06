@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import axios from 'axios';
 import { useStateContext } from '../contexts/ContextProvider';
 import "../style/ActualAccount.css";
+import "../style/Home.css";
 
-const ActualAccount = () => {
+const ActualAccount = (props) => {
 
     const { totalAmount, setTotalAmount, totalBills } = useStateContext();
-
+    
+    /* eslint-disable */
     useEffect(() => {
         const fetchTotalAmount = async () => {
             const res = await axios.get("http://localhost:5000/monthRegister/04/2023");
@@ -14,6 +16,7 @@ const ActualAccount = () => {
         };
         fetchTotalAmount();
     }, []);
+    /* eslint-enable */
 
 
     let actualAccount = totalAmount - totalBills;
@@ -22,7 +25,7 @@ const ActualAccount = () => {
 
     return (
         <div>
-            <div className='actualAccount'>
+            <div className={props.clase}>
                 <h1 style={{paddingLeft: 20, color: "orange"}}>Saldos</h1>
                 <div className='amountContainer'>
                     <div className='inicial-bar bar'></div>

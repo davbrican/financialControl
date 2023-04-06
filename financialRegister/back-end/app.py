@@ -34,7 +34,7 @@ def getDefault():
 def insertarBill():
     #mysql data
     fecha = request.json['date']
-    fecha = fecha.split("/")[2]+"-"+fecha.split("/")[1]+"-"+fecha.split("/")[0]
+    #fecha = fecha.split("/")[2]+"-"+fecha.split("/")[1]+"-"+fecha.split("/")[0]
     description = request.json['description']
     amount = request.json['amount']
     category = request.json['category']
