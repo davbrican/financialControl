@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ActualAccount from '../components/ActualAccount';
 import Bills from '../components/Bills';
 import Forms from '../components/Forms';
@@ -9,10 +9,10 @@ const Home = () => {
   
   return (
     <div>
+      <Graficas clase="graficas home-grafica" />
+      <Forms clase="form home-form" />
       <ActualAccount clase="actualAccount home-actualAccount" />
       <Bills clase="bills home-bills" />
-      <Forms clase="form home-form" />
-      <Graficas clase="graficas home-grafica" />
     </div>
   )
 }

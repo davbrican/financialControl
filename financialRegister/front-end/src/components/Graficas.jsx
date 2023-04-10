@@ -43,7 +43,7 @@ const Graficas = (props) => {
         <div className={props.clase}>
             <h1 style={{color: "orange"}}>Gráficas</h1>
             
-            <div id="my-pie-chart-container">
+            <div id="my-pie-chart-container" style={{marginLeft: 20}}>
                 <div id="my-pie-chart" style={{background: backgroundText}}></div>
                 <div id="legenda">
                     {Object.keys(data).map((category) => {

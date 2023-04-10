@@ -45,7 +45,7 @@ const Bills = (props) => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <table className="bill-table">
+        <table className="bill-table" style={{marginLeft: 20}}>
           <tr className="titles-bill-table">
             <td>Fecha</td>
             <td>Concepto</td>
